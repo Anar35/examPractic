@@ -3,6 +3,7 @@ import style from "./index.module.css";
 import { useBlogsContext } from "../../context/BlogsContext";
 import {
   Box,
+  Button,
   Card,
   CardActions,
   CardContent,
@@ -20,6 +21,7 @@ import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 import DiamondIcon from "@mui/icons-material/Diamond";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Helmet } from "react-helmet";
 
 const Home = () => {
   const [blogs, setBlogs] = useBlogsContext();
@@ -29,6 +31,9 @@ const Home = () => {
   }, [setBlogs]);
   return (
     <>
+      <Helmet>
+        <title>Security</title>
+      </Helmet>
       <section id={style.hero}>
         <div className={style.heroMain}>
           <h6 className={style.h6}>Openning on 21st February, 2018</h6>
@@ -519,6 +524,30 @@ const Home = () => {
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
               eiusmod tempor incididunt ut labore et <br /> dolore magna aliqua.
             </p>
+          </div>
+          <div>
+            <Button
+              onClick={() => {
+                setBlogs([...blogs.sort((x, y) => x.likeCount - y.likeCount)]);
+              }}
+              style={{ margin: "20px" }}
+              color="warning"
+              variant="contained"
+            >
+              Sort by Like
+            </Button>
+            <Button
+              onClick={() => {
+                setBlogs([
+                  ...blogs.sort((x, y) => x.commentsCount - y.commentsCount),
+                ]);
+              }}
+              style={{ margin: "20px" }}
+              color="info"
+              variant="contained"
+            >
+              Sort by Comment
+            </Button>
           </div>
           <Box sx={{ flexGrow: 1 }}>
             <Grid container spacing={2}>

@@ -13,6 +13,10 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import SportsBasketballIcon from "@mui/icons-material/SportsBasketball";
+import LanguageIcon from "@mui/icons-material/Language";
 import { Link } from "react-router-dom";
 
 const drawerWidth = 240;
@@ -87,73 +91,107 @@ const Navbar = (props) => {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: "flex" }}>
-      <CssBaseline />
-      <AppBar
-        component="nav"
-        style={{ backgroundColor: "rgba(0, 0, 0, 0.582)", boxShadow: "none" }}
-      >
-        <Toolbar className="container">
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{
-              flexGrow: 1,
-              display: { xs: "none", sm: "block" },
-              color: "black",
+    <>
+      <Box sx={{ display: "flex" }}>
+        <CssBaseline />
+        <AppBar
+          component="nav"
+          style={{ backgroundColor: "rgba(0, 0, 0, 0.582)", boxShadow: "none", position:"sticky", top:"0", left:"0" }}
+        >
+          <div
+            className="container"
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              padding: "5px",
             }}
           >
-            <img
-              src="https://preview.colorlib.com/theme/security/img/logo.png.webp"
-              alt="logo"
-            />
-          </Typography>
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            <Link to="/">
-              <Button sx={{ color: "white" }}>Home</Button>
-            </Link>
-            <Button sx={{ color: "white" }}>About us</Button>
-            <Button sx={{ color: "white" }}>Service</Button>
-            <Button sx={{ color: "white" }}>Team</Button>
-            <Button sx={{ color: "white" }}>Price</Button>
-            <Button sx={{ color: "white" }}>Blog</Button>
-            <Button sx={{ color: "white" }}>Contact</Button>
-            <Link to="/add-blog">
-              <Button sx={{ color: "white" }}>Add Blog</Button>
-            </Link>
-          </Box>
-        </Toolbar>
-      </AppBar>
-      <Box component="nav">
-        <Drawer
-          container={container}
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
-          sx={{
-            display: { xs: "block", sm: "none" },
-            "& .MuiDrawer-paper": {
-              boxSizing: "border-box",
-              width: drawerWidth,
-            },
-          }}
-        >
-          {drawer}
-        </Drawer>
+            <div className="socials">
+              <a className="social" href="#">
+                <FacebookIcon style={{ fontSize: "15px" }} />
+              </a>
+              <a className="social" href="#">
+                <TwitterIcon style={{ fontSize: "15px" }} />
+              </a>
+              <a className="social" href="#">
+                <SportsBasketballIcon style={{ fontSize: "15px" }} />
+              </a>
+              <a className="social" href="#">
+                <LanguageIcon style={{ fontSize: "15px" }} />
+              </a>
+            </div>
+            <div className="contact">
+              <a className="connect" href="#">
+                +880 012 3654 896
+              </a>{" "}
+              <a className="connect" href="#">
+                Register / Login
+              </a>
+            </div>
+          </div>
+          <hr style={{margin:"0"}}/>
+          <Toolbar className="container">
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="start"
+              onClick={handleDrawerToggle}
+              sx={{ mr: 2, display: { sm: "none" } }}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography
+              variant="h6"
+              component="div"
+              sx={{
+                flexGrow: 1,
+                display: { xs: "none", sm: "block" },
+                color: "black",
+              }}
+            >
+              <img
+                src="https://preview.colorlib.com/theme/security/img/logo.png.webp"
+                alt="logo"
+              />
+            </Typography>
+            <Box sx={{ display: { xs: "none", sm: "block" } }}>
+              <Link to="/">
+                <Button sx={{ color: "white" }}>Home</Button>
+              </Link>
+              <Button sx={{ color: "white" }}>About us</Button>
+              <Button sx={{ color: "white" }}>Service</Button>
+              <Button sx={{ color: "white" }}>Team</Button>
+              <Button sx={{ color: "white" }}>Price</Button>
+              <Button sx={{ color: "white" }}>Blog</Button>
+              <Button sx={{ color: "white" }}>Contact</Button>
+              <Link to="/add-blog">
+                <Button sx={{ color: "white" }}>Add Blog</Button>
+              </Link>
+            </Box>
+          </Toolbar>
+        </AppBar>
+        <Box component="nav">
+          <Drawer
+            container={container}
+            variant="temporary"
+            open={mobileOpen}
+            onClose={handleDrawerToggle}
+            ModalProps={{
+              keepMounted: true, // Better open performance on mobile.
+            }}
+            sx={{
+              display: { xs: "block", sm: "none" },
+              "& .MuiDrawer-paper": {
+                boxSizing: "border-box",
+                width: drawerWidth,
+              },
+            }}
+          >
+            {drawer}
+          </Drawer>
+        </Box>
       </Box>
-    </Box>
+    </>
   );
 };
 

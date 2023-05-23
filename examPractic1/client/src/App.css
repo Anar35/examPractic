@@ -65,3 +65,20 @@ footer .social {
 footer .social:hover {
   color: #fab700;
 }
+
+.social {
+  color: white;
+  margin-right: 10px;
+}
+.social:hover {
+  color: white;
+}
+.connect{
+  text-decoration: none;
+  color: white;
+  transition: .4s;
+  font-size: 14px;
+}
+.connect:hover{
+  color: #fab700;
+}
