@@ -458,42 +458,49 @@ const Home = () => {
             <Grid container spacing={2}>
               <Grid item lg={7} md={7}>
                 <img
+                  style={{ objectFit: "cover", width:"100%", height:"100%" }}
                   src="https://preview.colorlib.com/theme/security/img/g1.jpg"
                   alt="1"
                 />
               </Grid>
               <Grid item lg={5} md={5}>
                 <img
+                  style={{ objectFit: "cover", width:"100%", height:"100%" }}
                   src="https://preview.colorlib.com/theme/security/img/g2.jpg"
                   alt="2"
                 />
               </Grid>
               <Grid item lg={4} md={4}>
                 <img
+                  style={{ objectFit: "cover", width:"100%", height:"100%" }}
                   src="https://preview.colorlib.com/theme/security/img/g3.jpg"
                   alt="3"
                 />
               </Grid>
               <Grid item lg={4} md={4}>
                 <img
+                  style={{ objectFit: "cover", width:"100%", height:"100%" }}
                   src="https://preview.colorlib.com/theme/security/img/g4.jpg"
                   alt="4"
                 />
               </Grid>
               <Grid item lg={4} md={4}>
                 <img
+                  style={{ objectFit: "cover", width:"100%", height:"100%" }}
                   src="https://preview.colorlib.com/theme/security/img/g5.jpg"
                   alt="5"
                 />
               </Grid>
               <Grid item lg={5} md={5}>
                 <img
+                  style={{ objectFit: "cover", width:"100%", height:"100%" }}
                   src="https://preview.colorlib.com/theme/security/img/g6.jpg"
                   alt="6"
                 />
               </Grid>
               <Grid item lg={7} md={7}>
                 <img
+                  style={{ objectFit: "cover", width:"100%", height:"100%" }}
                   src="https://preview.colorlib.com/theme/security/img/g7.jpg"
                   alt="7"
                 />
